@@ -4,7 +4,7 @@
     :loading="loading"
     :disabled="disabled"
     :text="textOnly"
-    :rounded="rounded && !textOnly"
+    :rounded="rounded"
     :color="_color"
     :height="MdSmXsUtil(height, height, '')"
     :dark="dark"
@@ -42,29 +42,20 @@
         :height="iconSize"
       />
     </div>
-    <template #loader>
-      <v-progress-circular
-        indeterminate
-        color="#A0D0A0"
-        :width="2"
-        :size="Number(height.slice(0, -2)) / 2"
-      />
-    </template>
   </v-btn>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Component, Prop } from 'vue-property-decorator';
 import { mixins } from 'vue-class-component';
 import UtilMixin from '@/mixins/utilMixin';
 import { DeviceType, deviceType } from '@/models/types/deviceType';
 
 @Component
-export default class LwtgButton extends mixins(UtilMixin) {
+export default class BlockButton extends mixins(UtilMixin) {
   @Prop() label!: string;
   @Prop() primary!: boolean;
   @Prop() secondary!: boolean;
-  @Prop() danger!: boolean;
   @Prop() textOnly!: boolean;
   @Prop() dark!: boolean;
   @Prop() prependIcon!: string;
@@ -80,9 +71,8 @@ export default class LwtgButton extends mixins(UtilMixin) {
   @Prop({ default: true }) bold!: boolean;
 
   baseColor = '#666666';
-  primaryColor = '#A0D0A0';
-  secondaryColor = '#E2F0D9';
-  dangerColor = '#e32d2d';
+  primaryColor = '#666666';
+  secondaryColor = '#EEEEEE';
 
   get isDesktop() {
     return deviceType === DeviceType.DESKTOP;
@@ -95,8 +85,6 @@ export default class LwtgButton extends mixins(UtilMixin) {
       ? this.primaryColor
       : this.secondary
       ? this.secondaryColor
-      : this.danger
-      ? this.dangerColor
       : this.baseColor;
   }
 
@@ -105,8 +93,6 @@ export default class LwtgButton extends mixins(UtilMixin) {
       ? this.primaryColor
       : this.secondary
       ? this.secondaryColor
-      : this.danger
-      ? this.dangerColor
       : this.baseColor;
     return this.outlined && !this.textOnly && !this.disabled
       ? `color: ${this.baseColor}; border: solid 2px ${color} !important;`

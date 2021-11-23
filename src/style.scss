@@ -1,4 +1,39 @@
 ﻿// global styles
+.inherit-bg {
+  background-color: inherit !important;
+}
+
+.white-bg {
+  background-color: #ffffff !important;
+}
+
+.primary-bg {
+  background-color: #666666 !important;
+}
+
+.secondary-bg {
+  background-color: #EEEEEE !important;
+}
+
+.disabled-bg {
+  background-color: #f2f2f2 !important;
+}
+
+.danger-bg {
+  background-color: #e32d2d !important;
+}
+
+.hover-animation-button {
+  background: linear-gradient(to right, #666666 50%, #fff 50%);
+  background-size: 200% 100.5%;
+  background-position: right bottom;
+  border-left: 0.20em solid #666666;
+  transition: all .5s ease-out;
+}
+.hover-animation-button:hover {
+  background-position: left bottom;
+  color: white !important;
+}
 
 // word-break style
 .word-break {
@@ -41,7 +76,7 @@
 }
 
 .main-color {
-  color: #A0D0A0;
+  color: #666666;
 }
 
 .main-dark-color {
