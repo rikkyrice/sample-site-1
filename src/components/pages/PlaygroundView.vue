@@ -47,7 +47,6 @@ import UtilMixin from "@/mixins/utilMixin";
 import BlockButton from "@/components/atoms/BlockButton.vue";
 import LabelButton from "@/components/atoms/LabelButton.vue";
 import PlainContent from "@/components/atoms/PlainContent.vue";
-import BtnOne from "@/components/atoms/BtnOne.vue";
 import UserInfoMiniSection from '@/components/molecules/UserInfoMiniSection.vue';
 import Card from '@/components/molecules/Card.vue';
 import { FilmReviewList, FilmReview } from '@/models/filmReview';
@@ -59,7 +58,6 @@ import FilmContent from '@/components/organisms/FilmContent.vue';
     BlockButton,
     LabelButton,
     PlainContent,
-    BtnOne,
     UserInfoMiniSection,
     Card,
     FilmContent,
