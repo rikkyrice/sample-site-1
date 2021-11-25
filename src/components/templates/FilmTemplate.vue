@@ -1,6 +1,6 @@
 <template>
   <div id="filmTemplate" style="height: 100%;">
-    <plain-content :bg="`secondary`" style="height: 100%;">
+    <plain-content :bg="`secondary`">
       <slot name="film-content" />
     </plain-content>
   </div>
